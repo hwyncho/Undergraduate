@@ -12,7 +12,7 @@ import java.util.concurrent.*;
  * @author hwyn.cho
  * @version 0.0.0.1
  */
-public class HW02_2014726096 {
+public class FindSubArray {
 	/**
 	 * 메인 함수
 	 * @param args
