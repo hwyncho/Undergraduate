@@ -1,3 +1,10 @@
+/*
+ * StudentID : 2014726096
+ * Name : HwiYeon Cho
+ *
+ * This code was written in Windows.
+ */
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -13,20 +20,19 @@ public:
 	void setPuzzle(int n);
 	bool solvePuzzle(string puzzle, int hole);
 	vector<int> getSolution(void);
-
 private:
-	int n;					// 입력 크기
-	bool solve;				// 해결 여부
-	string puzzle;			// 퍼즐
-	string answer;			// 정답
-	vector<int> solution;	// 풀이
+	int n;						// 입력 크기
+	bool solve;					// 해결 여부 플래그
+	string puzzle;				// 퍼즐
+	string answer;				// 정답
+	vector<int> solution;		// 풀이
 };
 
 int main(void)
 {
 	int count = 1;
 	int n = 0;
-	
+
 	cout << ">>> Hello World!" << endl;
 
 	while (true)
@@ -38,21 +44,24 @@ int main(void)
 
 		if ((n >= 1) && (n <= 12))
 		{
+			/* 퍼즐 생성 */
 			MyPuzzle myPuzzle = MyPuzzle();
 			myPuzzle.setPuzzle(n);
 
 			string puzzle = myPuzzle.getPuzzle();
 			cout << ">>> Puzzle = " << puzzle << endl;
 
+			/* 퍼즐 풀이 */
 			cout << ">>> Solving... ";
 			myPuzzle.solvePuzzle(puzzle, n);
 
+			/* 퍼즐 풀이법 출력 */
 			vector<int> solution = myPuzzle.getSolution();
 			cout << ">>> Total = " << solution.size() << endl;
 			cout << ">>> Move = ";
 			for (auto i = solution.rbegin(); i < solution.rend(); i++)
 			{
-				cout << *i + 1 << " ";
+				cout << (*i + 1) << " ";
 
 				if (count == 20)
 				{
@@ -70,9 +79,7 @@ int main(void)
 			break;
 		}
 		else
-		{
-			cout << ">>> Input Error!" << endl;
-		}
+			cout << ">>> Input error!" << endl;
 	}
 
 	return 0;
@@ -84,6 +91,7 @@ MyPuzzle::MyPuzzle()
 	this->puzzle = "";
 	this->answer = "";
 	this->solve = false;
+	//this->solution = vector<int>();
 }
 
 MyPuzzle::~MyPuzzle()
@@ -128,7 +136,7 @@ void MyPuzzle::setPuzzle(int n)
 
 bool MyPuzzle::solvePuzzle(string puzzle, int hole)
 {
-	if (puzzle == this->answer)
+	if (puzzle.compare(this->answer) == 0)
 	{
 		this->solve = true;
 		cout << "Solved!" << endl;
@@ -136,9 +144,7 @@ bool MyPuzzle::solvePuzzle(string puzzle, int hole)
 		return true;
 	}
 	else if (this->solve)
-	{
 		return false;
-	}
 	else
 	{
 		/* 백돌의 옆이 구멍인 경우 - 이동 */
@@ -186,7 +192,7 @@ bool MyPuzzle::solvePuzzle(string puzzle, int hole)
 			}
 		}
 
-		/* 백돌의 옆 옆이 구멍인 경우 - 점프 */
+		/* 흑돌의 옆 옆이 구멍인 경우 - 점프 */
 		if ((hole < (2 * this->n - 1)) && (puzzle.at(hole + 2) == 'B'))
 		{
 			string temp = puzzle;
