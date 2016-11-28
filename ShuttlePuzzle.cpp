@@ -22,46 +22,57 @@ private:
 	vector<int> solution;	// 풀이
 };
 
-int main()
+int main(void)
 {
-	int count = 0;
+	int count = 1;
 	int n = 0;
 	
-	cout << "<<< n = ";
-	cin >> n;
+	cout << ">>> Hello World!" << endl;
 
-	if ((n >= 1) && (n <= 12))
+	while (true)
 	{
-		MyPuzzle myPuzzle = MyPuzzle();
-		myPuzzle.setPuzzle(n);
+		count = 1;
 
-		string puzzle = myPuzzle.getPuzzle();
-		cout << ">>> Puzzle = " << puzzle << endl;
+		cout << "<<< n = ";
+		cin >> n;
 
-		cout << ">>> Solving... ";
-		myPuzzle.solvePuzzle(puzzle, n);
-
-		vector<int> s = myPuzzle.getSolution();
-		cout << ">>> Total = " << s.size() << endl;
-		cout << ">>> Move = ";
-		for (auto i = s.rbegin(); i < s.rend(); i++)
+		if ((n >= 1) && (n <= 12))
 		{
-			cout << *i + 1 << " ";
+			MyPuzzle myPuzzle = MyPuzzle();
+			myPuzzle.setPuzzle(n);
 
-			if (count == 20)
+			string puzzle = myPuzzle.getPuzzle();
+			cout << ">>> Puzzle = " << puzzle << endl;
+
+			cout << ">>> Solving... ";
+			myPuzzle.solvePuzzle(puzzle, n);
+
+			vector<int> solution = myPuzzle.getSolution();
+			cout << ">>> Total = " << solution.size() << endl;
+			cout << ">>> Move = ";
+			for (auto i = solution.rbegin(); i < solution.rend(); i++)
 			{
-				cout << endl;
-				count = 0;
+				cout << *i + 1 << " ";
+
+				if (count == 20)
+				{
+					cout << endl;
+					count = 1;
+				}
+				else
+					count++;
 			}
-			else
-				count++;
+			cout << endl;
 		}
-		cout << endl;
-	}
-	else
-	{
-		cout << ">>> Input Error!" << endl;
-		return -1;
+		else if (n == 0)
+		{
+			cout << ">>> Bye!" << endl;
+			break;
+		}
+		else
+		{
+			cout << ">>> Input Error!" << endl;
+		}
 	}
 
 	return 0;
