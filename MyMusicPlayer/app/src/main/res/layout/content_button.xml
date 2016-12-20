@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="horizontal"
+	android:paddingBottom="@dimen/content_vertical_margin"
+	android:paddingLeft="@dimen/content_horizontal_margin"
+	android:paddingRight="@dimen/content_horizontal_margin"
+	android:paddingTop="@dimen/content_vertical_margin"
+	android:weightSum="4">
+
+	<ImageButton
+		android:id="@+id/imageButton_prev"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		app:srcCompat="@drawable/ic_av_skip_previous"/>
+
+	<ImageButton
+		android:id="@+id/imageButton_play"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		app:srcCompat="@drawable/ic_av_play_arrow"/>
+
+	<ImageButton
+		android:id="@+id/imageButton_next"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		app:srcCompat="@drawable/ic_av_skip_next"/>
+
+	<ImageButton
+		android:id="@+id/imageButton_stop"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		app:srcCompat="@drawable/ic_av_stop"/>
+</LinearLayout>

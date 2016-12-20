@@ -1,0 +1,9 @@
+<resources>
+	<string name="app_name">My Music Player</string>
+
+	<string name="text_title">Title</string>
+	<string name="text_artist">Artist</string>
+
+	<string name="text_start">0:00</string>
+	<string name="text_end">1:11</string>
+</resources>
