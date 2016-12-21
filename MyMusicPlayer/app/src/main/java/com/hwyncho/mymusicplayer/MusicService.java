@@ -20,15 +20,15 @@ import android.support.v7.app.NotificationCompat;
 import android.widget.RemoteViews;
 
 public class MusicService extends Service {
-	protected static final String REQUEST_PLAY = "com.hwyncho.service.music.request_play";
-	protected static final String REQUEST_PAUSE = "com.hwyncho.service.music.request_pause";
-	protected static final String REQUEST_STOP = "com.hwyncho.service.music.request_stop";
-	protected static final String REQUEST_PREV = "com.hwyncho.service.music.request_prev";
-	protected static final String REQUEST_NEXT = "com.hwyncho.service.music.request_next";
-	protected static final String REQUEST_SEEK = "com.hwyncho.service.music.request_seek";
+	protected static final String REQUEST_PLAY = "com.hwyncho.mymusicplayer.service.music.request_play";
+	protected static final String REQUEST_PAUSE = "com.hwyncho.mymusicplayer.service.music.request_pause";
+	protected static final String REQUEST_STOP = "com.hwyncho.mymusicplayer.service.music.request_stop";
+	protected static final String REQUEST_PREV = "com.hwyncho.mymusicplayer.service.music.request_prev";
+	protected static final String REQUEST_NEXT = "com.hwyncho.mymusicplayer.service.music.request_next";
+	protected static final String REQUEST_SEEK = "com.hwyncho.mymusicplayer.service.music.request_seek";
 
-	protected static final String RESPONSE_INFO = "com.hwyncho.service.music.response_info";
-	protected static final String RESPONSE_STATE = "com.hwyncho.service.music.response_state";
+	protected static final String RESPONSE_INFO = "com.hwyncho.mymusicplayer.service.music.response_info";
+	protected static final String RESPONSE_STATE = "com.hwyncho.mymusicplayer.service.music.response_state";
 
 	protected static final String FILEPATH = Environment.getExternalStorageDirectory().getPath() + "/mymusic.mp3";
 
@@ -51,9 +51,12 @@ public class MusicService extends Service {
 		task = new Runnable() {
 			@Override
 			public void run() {
-				while (mediaPlayer.isPlaying()) {
-					mySendResponse(RESPONSE_STATE);
-					mySetNoti(mediaPlayer.getCurrentPosition());
+				while (true) {
+					if (mediaPlayer.isPlaying()) {
+						mySendResponse(RESPONSE_STATE);
+						mySetNoti(mediaPlayer.getCurrentPosition());
+					}
+
 					try {
 						Thread.sleep(500);
 					} catch (InterruptedException e) {
@@ -75,7 +78,8 @@ public class MusicService extends Service {
 		this.mySetPlayer();
 		this.mySetReceiver();
 
-		//this.mySetNoti();
+		if (this.mediaPlayer != null)
+			this.thread.start();
 	}
 
 	@Override
@@ -102,7 +106,6 @@ public class MusicService extends Service {
 
 	private void mySetPlayer() {
 		if (this.mediaPlayer == null) {
-			//this.mediaPlayer = MediaPlayer.create(this, R.raw.over_the_horizon);
 			this.mediaPlayer = MediaPlayer.create(this, Uri.parse(FILEPATH));
 			this.mediaPlayer.setWakeMode(getApplicationContext(), PowerManager.PARTIAL_WAKE_LOCK);
 			this.mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
@@ -123,14 +126,12 @@ public class MusicService extends Service {
 			public void onReceive(Context context, Intent intent) {
 				if (intent.getAction().equals(REQUEST_PLAY)) {
 					mediaPlayer.start();
-					thread.start();
 				} else if (intent.getAction().equals(REQUEST_PAUSE)) {
 					mediaPlayer.pause();
 					mySendResponse(RESPONSE_STATE);
 					mySetNoti(mediaPlayer.getCurrentPosition());
 				} else if (intent.getAction().equals(REQUEST_STOP)) {
 					mediaPlayer.stop();
-					thread.interrupt();
 					mediaPlayer = MediaPlayer.create(getApplicationContext(), Uri.parse(FILEPATH));
 				} else if (intent.getAction().equals(REQUEST_PREV)) {
 					if (mediaPlayer.getCurrentPosition() - 10000 > 0)

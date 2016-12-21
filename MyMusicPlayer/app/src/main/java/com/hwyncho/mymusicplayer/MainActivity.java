@@ -18,15 +18,15 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-	protected static final String REQUEST_PLAY = "com.hwyncho.service.music.request_play";
-	protected static final String REQUEST_PAUSE = "com.hwyncho.service.music.request_pause";
-	protected static final String REQUEST_STOP = "com.hwyncho.service.music.request_stop";
-	protected static final String REQUEST_PREV = "com.hwyncho.service.music.request_prev";
-	protected static final String REQUEST_NEXT = "com.hwyncho.service.music.request_next";
-	protected static final String REQUEST_SEEK = "com.hwyncho.service.music.request_seek";
+	protected static final String REQUEST_PLAY = "com.hwyncho.mymusicplayer.service.music.request_play";
+	protected static final String REQUEST_PAUSE = "com.hwyncho.mymusicplayer.service.music.request_pause";
+	protected static final String REQUEST_STOP = "com.hwyncho.mymusicplayer.service.music.request_stop";
+	protected static final String REQUEST_PREV = "com.hwyncho.mymusicplayer.service.music.request_prev";
+	protected static final String REQUEST_NEXT = "com.hwyncho.mymusicplayer.service.music.request_next";
+	protected static final String REQUEST_SEEK = "com.hwyncho.mymusicplayer.service.music.request_seek";
 
-	protected static final String RESPONSE_INFO = "com.hwyncho.service.music.response_info";
-	protected static final String RESPONSE_STATE = "com.hwyncho.service.music.response_state";
+	protected static final String RESPONSE_INFO = "com.hwyncho.mymusicplayer.service.music.response_info";
+	protected static final String RESPONSE_STATE = "com.hwyncho.mymusicplayer.service.music.response_state";
 
 	private static final int MY_PERMISSION_REQUEST_STORAGE = 0;
 
