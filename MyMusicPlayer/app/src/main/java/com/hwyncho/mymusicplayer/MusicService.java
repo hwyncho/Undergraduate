@@ -239,15 +239,18 @@ public class MusicService extends Service {
 			remoteViews.setOnClickPendingIntent(R.id.imageButton_play, pendingIntent_play);
 		remoteViews.setOnClickPendingIntent(R.id.imageButton_next, pendingIntent_next);
 
-		NotificationCompat.Builder builder = (NotificationCompat.Builder) new NotificationCompat.Builder(this)
-				.setSmallIcon(R.drawable.ic_stat_av_play_circle_outline)
-				.setContentTitle("HW05")
-				.setContentText("hwyn.cho")
-				.setContentIntent(pendingIntent_activity)
-				.setContentIntent(pendingIntent_prev)
-				.setContentIntent(pendingIntent_play)
-				.setContentIntent(pendingIntent_next)
-				.setCustomContentView(remoteViews);
+		NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+		if (mediaPlayer.isPlaying())
+			builder.setSmallIcon(R.drawable.ic_stat_av_play_circle_outline);
+		else
+			builder.setSmallIcon(R.drawable.ic_stat_av_pause_circle_outline);
+		builder.setContentTitle(getResources().getString(R.string.app_name));
+		builder.setContentText("hwyn.cho");
+		builder.setContentIntent(pendingIntent_activity);
+		builder.setContentIntent(pendingIntent_prev);
+		builder.setContentIntent(pendingIntent_play);
+		builder.setContentIntent(pendingIntent_next);
+		builder.setCustomContentView(remoteViews);
 
 		NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 		manager.notify(0, builder.build());
