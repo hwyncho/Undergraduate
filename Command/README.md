@@ -1,1 +1,2 @@
-Implementation of linux command
+# Command
+Implementation of Linux command
