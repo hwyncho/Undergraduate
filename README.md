@@ -1,2 +1,2 @@
 # Homeworks
-The collection of homeworks
+The collection of Homeworks
