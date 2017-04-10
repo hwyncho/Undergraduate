@@ -1,1 +1,2 @@
-# Network Match Othello
+# Othello-with-ncurses
+Online Othello with ncurses
