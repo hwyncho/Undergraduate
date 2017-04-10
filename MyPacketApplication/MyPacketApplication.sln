@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPacketLibrary", "MyPacketLibrary\MyPacketLibrary.csproj", "{89D27431-1E41-4BAC-8166-DDDD73738C4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPacketServer", "MyPacketServer\MyPacketServer.csproj", "{ED3041FD-302F-4763-B260-6845E0D95620}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPacketClient", "MyPacketClient\MyPacketClient.csproj", "{D285C090-4087-4979-8823-20F46294BD86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89D27431-1E41-4BAC-8166-DDDD73738C4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89D27431-1E41-4BAC-8166-DDDD73738C4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89D27431-1E41-4BAC-8166-DDDD73738C4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89D27431-1E41-4BAC-8166-DDDD73738C4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED3041FD-302F-4763-B260-6845E0D95620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED3041FD-302F-4763-B260-6845E0D95620}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED3041FD-302F-4763-B260-6845E0D95620}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED3041FD-302F-4763-B260-6845E0D95620}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D285C090-4087-4979-8823-20F46294BD86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D285C090-4087-4979-8823-20F46294BD86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D285C090-4087-4979-8823-20F46294BD86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D285C090-4087-4979-8823-20F46294BD86}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
