@@ -1,6 +1,7 @@
 import random
 import time
 
+
 def generate_chromosomes():
     n = test_set_len
     chromosomes = []

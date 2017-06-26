@@ -2,14 +2,16 @@ import random
 import dynamic_programming as dp
 import genetic_algorithm as ga
 
+
+SET_SIZE = 1000
 RANGE_MIN = 10000
 RANGE_MAX = 100000
 
 test_set = []
-for i in range(1000):
+for i in range(SET_SIZE):
     test_set.append(random.randrange(RANGE_MIN, RANGE_MAX))
 
-test_set_len = len(test_set)
+test_set_len = SET_SIZE
 
 test_sum = 129348
 
