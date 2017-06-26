@@ -114,7 +114,7 @@ def run(set_, set_len, sum_, run_time):
     for chromosome in chromosomes:
         population.append(calculate_fitness(chromosome))
 
-    while((time_end - time_start) < run_time):
+    while (time_end - time_start) < run_time:
         selected = selection(population, 2)
         new_indivisual = mutation(
             crossover(selected[0]['chromosome'], selected[1]['chromosome'])

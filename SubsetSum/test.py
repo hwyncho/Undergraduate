@@ -13,7 +13,7 @@ for i in range(SET_SIZE):
 
 test_set_len = SET_SIZE
 
-test_sum = 129348
+test_sum = 13415632
 
 dp_run_time, dp_result = dp.run(test_set, test_set_len, test_sum)
 print('[DP] Time:{0}, Result:{1} \n'.format(dp_run_time, dp_result))
