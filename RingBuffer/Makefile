@@ -1,4 +1,4 @@
-TEST = MyQueue.o Testcase.o
+TEST = MyQueue.o main.o
 
 test: $(TEST)
 	gcc -o $@ $(TEST) -lrt -lpthread
@@ -6,7 +6,7 @@ test: $(TEST)
 MyQueue.o: MyQueue.c MyQueue.h
 	gcc -c $<
 
-Testcase.o: Testcase.c MyQueue.h
+main.o: main.c MyQueue.h
 	gcc -c $<
 
 clean:
