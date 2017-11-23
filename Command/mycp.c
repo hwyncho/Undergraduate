@@ -7,7 +7,6 @@
  *
  * Last Updated : 2016/04/04 02:11
  */
-
 #include <dirent.h>
 #include <fcntl.h>
 #include <stdio.h>
