@@ -1,11 +1,12 @@
-﻿#과제03
-#학과 : 컴퓨터소프트웨어학과
-#학년 : 2학년
-#학번 : 2014726096
-#이름 : 조휘연
+﻿"""
+# 과제 03
+# 학과 : 컴퓨터소프트웨어학과
+# 학년 : 2학년
+# 학번 : 2014726096
+# 이름 : 조휘연
 
-#Fractal Plant
-
+# Fractal Plant
+"""
 import turtle
 
 def _level(n):
@@ -51,8 +52,8 @@ def _setup():
     turtle.goto(x, y)
     turtle.pendown()
     turtle.left(65)
-    
-_setup()    
+
+_setup()
 plant = _level(6)
 _draw(plant, 3.3)
-turtle.exitonclick() 
+turtle.exitonclick()

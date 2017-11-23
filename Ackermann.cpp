@@ -18,45 +18,45 @@ unsigned int function(unsigned int x, unsigned int y);
 
 int main(void)
 {
-	unsigned int x, y;
+    unsigned int x, y;
 
-	cout << ">>> Please input two integers." << endl;
+    cout << ">>> Please input two integers." << endl;
 
-	cout << "<<< x(0 ~ 3) : ";
-	cin >> x;
-	rangeCheck(x, 0, 3);
+    cout << "<<< x(0 ~ 3) : ";
+    cin >> x;
+    rangeCheck(x, 0, 3);
 
-	cout << "<<< y(0 ~ 13) : ";
-	cin >> y;
-	rangeCheck(y, 0, 13);
+    cout << "<<< y(0 ~ 13) : ";
+    cin >> y;
+    rangeCheck(y, 0, 13);
 
-	cout << ">>> Result : " << function(x, y) << endl;
+    cout << ">>> Result : " << function(x, y) << endl;
 
-	return 0;
+    return 0;
 }
 
 void rangeCheck(unsigned input, unsigned int min, unsigned int max)
 {
-	if (input < min || input > max)
-	{
-		cerr << ">>> The input value is not valid!" << endl;
+    if (input < min || input > max)
+    {
+        cerr << ">>> The input value is not valid!" << endl;
 
-		exit(1);
-	}
+        exit(1);
+    }
 }
 
 unsigned int function(unsigned int x, unsigned int y)
 {
-	while (x != 0)
-	{
-		if (y == 0)
-			y = 1;
+    while (x != 0)
+    {
+        if (y == 0)
+            y = 1;
 
-		else
-			y = function(x, y - 1);
+        else
+            y = function(x, y - 1);
 
-		x--;
-	}
+        x--;
+    }
 
-	return y + 1;
+    return y + 1;
 }
