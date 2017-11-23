@@ -1,5 +1,5 @@
-SERVER = Server.c
-CLIENT = Client.c
+SERVER = server.c
+CLIENT = client.c
 
 all: server client
 
