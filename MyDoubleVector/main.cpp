@@ -7,7 +7,6 @@
  *
  * Last Updated : 2017/09/27 20:30
  */
-
 #include <cstdlib>
 #include <iostream>
 #include "MyDoubleVector.h"

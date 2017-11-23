@@ -7,7 +7,6 @@
  *
  * Last Updated : 2017/09/27 20:30
  */
-
 #ifndef __MyDoubleVector_H__
 #define __MyDoubleVector_H__
 
