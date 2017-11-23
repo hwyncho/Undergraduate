@@ -6,7 +6,6 @@
  *
  * Last Updated : 2016/04/04 02:03
  */
-
 #ifndef __LPC_H__
 #define __LPC_H__
 
@@ -20,32 +19,32 @@
 /* declaration of lpc types */
 typedef enum __lpcService
 {
-	LPC_OPEN_FILE = 0,
-	LPC_READ_FILE,
-	LPC_WRITE_FILE,
-	LPC_CLOSE_FILE,
-	LPC_FLUSH_FILE
+    LPC_OPEN_FILE = 0,
+    LPC_READ_FILE,
+    LPC_WRITE_FILE,
+    LPC_CLOSE_FILE,
+    LPC_FLUSH_FILE
 } LpcService;
 
 typedef struct __lpcArgMsg
 {
-	pid_t pid;	// message type
-	int argSize;
-	char argData[LPC_DATA_MAX];
+    pid_t pid;    // message type
+    int argSize;
+    char argData[LPC_DATA_MAX];
 } LpcArgPack;
 
 typedef struct __lpcHdrPack
 {
-	pid_t pid;	// message type
-	LpcService service;
-	int numArg;
+    pid_t pid;    // message type
+    LpcService service;
+    int numArg;
 } LpcHdrPack;
 
 typedef struct __lpcResult
 {
-	int errorno;
-	int resultSize;
-	char resultData[LPC_DATA_MAX];
+    int errorno;
+    int resultSize;
+    char resultData[LPC_DATA_MAX];
 } LpcResult;
 
 #endif /* !__LPC_H__ */

@@ -6,7 +6,6 @@
  *
  * Last Updated : 2016/04/04 02:04
  */
-
 #ifndef __LPC_CLIENT_H__
 #define __LPC_CLIENT_H__
 
