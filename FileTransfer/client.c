@@ -4,7 +4,6 @@
  *
  * This code was written in Ubuntu.
  */
-
 #include <arpa/inet.h>
 #include <fcntl.h>
 #include <stdio.h>
