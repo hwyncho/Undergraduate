@@ -3,9 +3,9 @@
 
 void main(void)
 {
-	parseGraph("input_A");
+    parseGraph("input_A");
 
-	freeGraph();
+    freeGraph();
 
-	return;
+    return;
 }

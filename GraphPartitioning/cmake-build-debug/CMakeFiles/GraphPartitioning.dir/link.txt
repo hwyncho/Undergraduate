@@ -1,1 +1,0 @@
-/usr/bin/cc  -g   CMakeFiles/GraphPartitioning.dir/Test.c.o CMakeFiles/GraphPartitioning.dir/Graph.c.o CMakeFiles/GraphPartitioning.dir/Parse.c.o  -o GraphPartitioning 

@@ -5,9 +5,9 @@
 
 typedef struct _Node
 {
-	int id;
-	int degree;
-	int * otherId;
+    int id;
+    int degree;
+    int * otherId;
 } Node;
 
 Node * Graph;
